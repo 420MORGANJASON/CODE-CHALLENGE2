@@ -1,7 +1,7 @@
 import { useEffect, useState }from 'react';
 import React from 'react'
 
-function BotCollection({enlistBot}) {
+function BotCollection() {
     const [bots, setBots] = useState([])
     const [enlistedBots, setEnlistedBots] = useState([]);
 
