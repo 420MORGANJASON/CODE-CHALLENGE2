@@ -5,12 +5,12 @@ function BotCollection({enlistBot}) {
     const [bots, setBots] = useState([])
     const [enlistedBots, setEnlistedBots] = useState([]);
 
-//     useEffect(()=>{
-//         fetch('http://localhost:3000/bots')
-//         .then(response => response.json())
-//         .then(data => setBots(data))
-//         .catch(err => console.log(err))
-//     }, []);
+    useEffect(()=>{
+        fetch('http://localhost:3000/bots')
+        .then(response => response.json())
+        .then(data => setBots(data))
+        .catch(err => console.log(err))
+    }, []);
 
 //      const enlistedBot = (bot) => {
 //     if (!enlistedBots.includes(bot)) {
