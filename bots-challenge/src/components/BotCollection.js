@@ -12,11 +12,11 @@ function BotCollection({enlistBot}) {
         .catch(err => console.log(err))
     }, []);
 
-//      const enlistedBot = (bot) => {
-//     if (!enlistedBots.includes(bot)) {
-//       setEnlistedBots([...enlistedBots, bot]);
-//     }
-//   };
+     const enlistedBot = (bot) => {
+    if (!enlistedBots.includes(bot)) {
+      setEnlistedBots([...enlistedBots, bot]);
+    }
+  };
 
 //    const deleteBot = (bot) => {
 //     fetch(`http://localhost:3000/bots/${bot.id}`, { method: 'DELETE' })
