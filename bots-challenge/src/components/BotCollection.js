@@ -18,14 +18,14 @@ function BotCollection({enlistBot}) {
     }
   };
 
-//    const deleteBot = (bot) => {
-//     fetch(`http://localhost:3000/bots/${bot.id}`, { method: 'DELETE' })
-//       .then(() => {
-//         setBots(bots.filter(b => b.id !== bot.id));
-//         setEnlistedBots(enlistedBots.filter(b => b.id !== bot.id));
-//       })
-//       .catch(err => console.log(err));
-//   };
+   const deleteBot = (bot) => {
+    fetch(`http://localhost:3000/bots/${bot.id}`, { method: 'DELETE' })
+      .then(() => {
+        setBots(bots.filter(b => b.id !== bot.id));
+        setEnlistedBots(enlistedBots.filter(b => b.id !== bot.id));
+      })
+      .catch(err => console.log(err));
+  };
 
 //   return (
 
