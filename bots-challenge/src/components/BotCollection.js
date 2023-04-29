@@ -45,34 +45,34 @@ function BotCollection({enlistBot}) {
             <th>Enlist</th>
           </tr>
         </thead>
-//         <tbody>
-//           {bots.map(bot => (
-//             <tr key={bot.id}>
-//               <td>{bot.id}</td>
-//               <td>{bot.name}</td>
-//               <td>{bot.health}</td>
-//               <td>{bot.damage}</td>
-//               <td>{bot.armor}</td>
-//               <td><img src={bot.avatar_url} alt={bot.name} /></td>
-//               <td>{bot.created_at}</td>
-//               <td>{bot.updated_at}</td>
-//               <td>
-//                 {!enlistedBots.includes(bot) && (
-//                   <button onClick={() => enlistedBot(bot)}>Enlist</button>
-//                 )}
-//                 {enlistedBots.includes(bot) && (
-//                   <button onClick={() => enlistedBot(bot)}>Release</button>
-//                 )}
-//               </td>
-//                <td>
-//                 <button onClick={() => deleteBot(bot)}>X</button>
-//               </td>
-//             </tr>
-//           ))}
-//         </tbody>
-//       </table>
-//         <YourBotArmy bots={enlistedBots} />
-//     </div>
+           <tbody>
+           {bots.map(bot => (
+            <tr key={bot.id}>
+              <td>{bot.id}</td>
+              <td>{bot.name}</td>
+              <td>{bot.health}</td>
+              <td>{bot.damage}</td>
+              <td>{bot.armor}</td>
+              <td><img src={bot.avatar_url} alt={bot.name} /></td>
+              <td>{bot.created_at}</td>
+              <td>{bot.updated_at}</td>
+              <td>
+                {!enlistedBots.includes(bot) && (
+                  <button onClick={() => enlistedBot(bot)}>Enlist</button>
+                )}
+                {enlistedBots.includes(bot) && (
+                  <button onClick={() => enlistedBot(bot)}>Release</button>
+                )}
+              </td>
+               <td>
+                <button onClick={() => deleteBot(bot)}>X</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+        <YourBotArmy bots={enlistedBots} />
+    </div>
 
    
 //   );
