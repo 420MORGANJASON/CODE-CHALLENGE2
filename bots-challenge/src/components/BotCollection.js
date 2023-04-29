@@ -29,22 +29,22 @@ function BotCollection({enlistBot}) {
 
 //   return (
 
-//      <div>
-//       <h1>Bots</h1>
-//       <table>
-//         <thead>
-//           <tr>
-//             <th>ID</th>
-//             <th>Name</th>
-//             <th>Health</th>
-//             <th>Damage</th>
-//             <th>Armor</th>
-//             <th>Avatar URL</th>
-//             <th>Created At</th>
-//             <th>Updated At</th>
-//             <th>Enlist</th>
-//           </tr>
-//         </thead>
+     <div>
+      <h1>Bots</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Health</th>
+            <th>Damage</th>
+            <th>Armor</th>
+            <th>Avatar URL</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+            <th>Enlist</th>
+          </tr>
+        </thead>
 //         <tbody>
 //           {bots.map(bot => (
 //             <tr key={bot.id}>
