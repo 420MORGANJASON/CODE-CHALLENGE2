@@ -27,7 +27,7 @@ function BotCollection({enlistBot}) {
       .catch(err => console.log(err));
   };
 
-//   return (
+  return (
 
      <div>
       <h1>Bots</h1>
@@ -75,55 +75,55 @@ function BotCollection({enlistBot}) {
     </div>
 
    
-//   );
-// }
-//  function YourBotArmy({ bots, releaseBot }) {
-//   return (
-//     <div>
-//       <h2>Your Bot Army</h2>
-//       <ul>
-//         {bots.map(bot => (
-//           <li key={bot.id}>
-//             {bot.name}
-//              <button onClick={() => releaseBot(bot)}>Release</button>
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-//         }
+  );
+}
+ function YourBotArmy({ bots, releaseBot }) {
+  return (
+    <div>
+      <h2>Your Bot Army</h2>
+      <ul>
+        {bots.map(bot => (
+          <li key={bot.id}>
+            {bot.name}
+             <button onClick={() => releaseBot(bot)}>Release</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+        }
 
-// function App() {
-//   const [army, setArmy] = useState([]);
-//   const enlistBot = (bot) => {
-//     if (!army.includes(bot)) {
-//       setArmy([...army, bot]);
-//     }
-//   };
-//   const releaseBot = (id) => {
-//     setArmy(army.filter((bot) => bot.id !== id));
-//   };
+function App() {
+  const [army, setArmy] = useState([]);
+  const enlistBot = (bot) => {
+    if (!army.includes(bot)) {
+      setArmy([...army, bot]);
+    }
+  };
+  const releaseBot = (id) => {
+    setArmy(army.filter((bot) => bot.id !== id));
+  };
 
-//   return (
-//     <div>
-//       <BotCollection enlistBot={enlistBot} />
-//       <YourBotArmy bots={army} releaseBot={releaseBot} />
-//     </div>
-//   );
-// }
+  return (
+    <div>
+      <BotCollection enlistBot={enlistBot} />
+      <YourBotArmy bots={army} releaseBot={releaseBot} />
+    </div>
+  );
+}
 
 
-//     <div>
-//       <ul>
-//     {bots.map((bot, index )=> (
-//             <ul key={index}>
-//                 {bots.id} {bots.name} {bots.health} {bots.damage} {bots.armor} {bots.avatar_url} {bots.created_at} {bots.updated_at} 
-//             </ul>
-//         ))}
-//       </ul>
-//     </div>
-//   )
-// }
+    <div>
+      <ul>
+    {bots.map((bot, index )=> (
+            <ul key={index}>
+                {bots.id} {bots.name} {bots.health} {bots.damage} {bots.armor} {bots.avatar_url} {bots.created_at} {bots.updated_at} 
+            </ul>
+        ))}
+      </ul>
+    </div>
+  
+
 
 export default BotCollection;
 
