@@ -93,37 +93,6 @@ function BotCollection() {
   );
         }
 
-// function App() {
-//   const [army, setArmy] = useState([]);
-//   const enlistBot = (bot) => {
-//     if (!army.includes(bot)) {
-//       setArmy([...army, bot]);
-//     }
-//   };
-//   const releaseBot = (id) => {
-//     setArmy(army.filter((bot) => bot.id !== id));
-//   };
-
-//   return (
-//     <div>
-//       <BotCollection enlistBot={enlistBot} />
-//       <YourBotArmy bots={army} releaseBot={releaseBot} />
-//     </div>
-//   );
-// }
-
-
-//     <div>
-//       <ul>
-//     {bots.map((bot, index )=> (
-//             <ul key={index}>
-//                 {bots.id} {bots.name} {bots.health} {bots.damage} {bots.armor} {bots.avatar_url} {bots.created_at} {bots.updated_at} 
-//             </ul>
-//         ))}
-//       </ul>
-//     </div>
-//   )
-// }
 
 export default BotCollection;
 
