@@ -106,7 +106,7 @@ it will be displayed only if the bot is enlisted in the listedBots array */}
 
  function YourBotArmy({ bots, releaseBot }) {
   return (
-    <div style={{ float: 'right' }}>
+    <div>
       <h2>Your Bot Army</h2>
       <ul>
         {bots.map(bot => (
