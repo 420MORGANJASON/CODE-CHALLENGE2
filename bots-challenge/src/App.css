@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  background-color: bisque;
+}
+*{
+  background-color: bisque;
 }
 
 .App-logo {
@@ -28,8 +32,12 @@
   color: #61dafb;
 }
 .TABLE{
-  background-color: gray;
-  color: azure;
+  color: black;
+  margin: auto;
+  padding: auto;
+}
+h1{
+  font-size: 100px;
 }
 @keyframes App-logo-spin {
   from {
