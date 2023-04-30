@@ -34,7 +34,7 @@ function BotCollection() {
 
 
    const deleteBot = (bot) => {
-    fetch(`http://localhost:3000/bots/${bot.id}`, { method: 'DELETE' })
+    fetch(` http://localhost:3000/bots/${bot.id}`, { method: 'DELETE' })
       .then(() => {
         setBots(bots.filter(b => b.id !== bot.id));
         setlistedBots(listedBots.filter(b => b.id !== bot.id));
