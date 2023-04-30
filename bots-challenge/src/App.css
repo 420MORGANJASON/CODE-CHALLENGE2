@@ -72,6 +72,15 @@ h1{
   font-size: 30px;
 
 }
+.FILTER1{
+font-size: 40px;
+color: #000;
+}
+.INPUT1{
+ height: 1500%;
+ width: 10%;
+ background-color: #ccd5ae;
+}
 h2{
 font-size: 70px;
 }

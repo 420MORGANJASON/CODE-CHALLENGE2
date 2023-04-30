@@ -3,8 +3,10 @@ import React from 'react'
 // import React from './App.css';
 
 function BotCollection() {
-    const [bots, setBots] = useState([])
+    const [bots, setBots] = useState([]);
     const [listedBots, setlistedBots] = useState([]);
+     const [filter, setFilter] = useState('');
+    
 
     useEffect(()=>{
         fetch('http://localhost:3000/bots')
@@ -42,10 +44,24 @@ function BotCollection() {
       .catch(err => console.log(err));
   };
 
+  const handleFilterChange = (event) => {
+    setFilter(event.target.value);
+  };
+
+  const filteredBots = filter
+    ? bots.filter(bot => bot.bot_class.toLowerCase().includes(filter.toLowerCase()))
+    : bots;
+
   return (
 
      <div className='TABLE'>
       <h1>Bots</h1>
+
+       <div>
+        <label htmlFor="filter" className='FILTER1'>Filter by bot class:</label>
+        <input type="text" id="filter" value={filter} onChange={handleFilterChange} className='INPUT1' />
+      </div>
+
       <table className='TABLE1'>
         <thead>
           <tr>
@@ -54,13 +70,14 @@ function BotCollection() {
             <th>Health</th>
             <th>Damage</th>
             <th>Armor</th>
+            <th>bot_class</th>
             <th>Avatar URL</th>
             <th>Created At</th>
             <th>Updated At</th>
             <th>Enlist</th>
           </tr>
         </thead>
-        <tbody>
+        {/* <tbody>
           {bots.map(bot => (
             <tr key={bot.id}>
               <td>{bot.id}</td>
@@ -68,6 +85,20 @@ function BotCollection() {
               <td>{bot.health}</td>
               <td>{bot.damage}</td>
               <td>{bot.armor}</td>
+              <td>{bot.bot_class}</td>
+              <td><img src={bot.avatar_url} alt={bot.name} /></td>
+              <td>{bot.created_at}</td>
+              <td>{bot.updated_at}</td>
+              <td> */}
+                <tbody>
+          {filteredBots.map(bot => (
+           <tr key={bot.id}>
+              <td>{bot.id}</td>
+              <td>{bot.name}</td>
+              <td>{bot.health}</td>
+              <td>{bot.damage}</td>
+              <td>{bot.armor}</td>
+              <td>{bot.bot_class}</td>
               <td><img src={bot.avatar_url} alt={bot.name} /></td>
               <td>{bot.created_at}</td>
               <td>{bot.updated_at}</td>
@@ -84,6 +115,7 @@ it will be displayed only if the bot is enlisted in the listedBots array */}
                   <button onClick={() => releaseBot(bot)} className='BTN2'>Release</button>
                 )}
               </td>
+              
                <td>
                 <button onClick={() => deleteBot(bot)} className='BTN3'>X</button>
               </td>
@@ -118,6 +150,7 @@ it will be displayed only if the bot is enlisted in the listedBots array */}
               {bot.health}
               {bot.damage}
               {bot.armor}
+              {bot.bot_class}
               {bot.created_at}
               {bot.updated_at}
              <button onClick={() => releaseBot(bot)} className='BTN4'>Release</button>
