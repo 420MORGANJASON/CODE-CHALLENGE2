@@ -44,7 +44,7 @@ function BotCollection() {
 
   return (
 
-     <div>
+     <div className='TABLE'>
       <h1>Bots</h1>
       <table>
         <thead>
