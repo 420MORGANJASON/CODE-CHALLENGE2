@@ -107,7 +107,7 @@ it will be displayed only if the bot is enlisted in the listedBots array */}
 
  function YourBotArmy({ bots, releaseBot }) {
   return (
-    <div>
+    <div  className='UL1'>
       <h2>Your Bot Army</h2>
       <ul>
         {bots.map(bot => (
@@ -120,7 +120,7 @@ it will be displayed only if the bot is enlisted in the listedBots array */}
               {bot.armor}
               {bot.created_at}
               {bot.updated_at}
-             <button onClick={() => releaseBot(bot)}>Release</button>
+             <button onClick={() => releaseBot(bot)} className='BTN4'>Release</button>
           </li>
         ))}
       </ul>

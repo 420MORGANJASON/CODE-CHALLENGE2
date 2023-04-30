@@ -40,15 +40,40 @@
   font-size: 30px;
 
 }
+.BTN1{
+  font-size: 25px;
+background-color: #ccd5ae;
+
+}
+.BTN2 {
+  font-size: 25px;
+  background-color: burlywood;
+}
+.BTN3 {
+  font-size: 25px;
+  background-color: red;
+}
+.BTN4 {
+  font-size: 25px;
+  background-color: aqua;
+}
 h1{
   font-size: 100px;
-  border: 40px;
-  border-radius: 55px;
-  border-left: 100px;
-  padding: 0;
+  border: 30px;
+  border-radius: 25%;
+  border-left: 40%;
+  padding: 1%;
+  padding-left: 40%;
   box-sizing: border-box;
   color: #000;
   background-color: #ccd5ae;
+}
+.UL1{
+  font-size: 30px;
+
+}
+h2{
+font-size: 70px;
 }
 @keyframes App-logo-spin {
   from {
