@@ -3,7 +3,7 @@ import React from 'react'
 
 function BotCollection() {
     const [bots, setBots] = useState([])
-    const [enlistedBots, setEnlistedBots] = useState([]);
+    const [listedBots, setlistedBots] = useState([]);
 
     useEffect(()=>{
         fetch('http://localhost:3000/bots')
@@ -12,17 +12,31 @@ function BotCollection() {
         .catch(err => console.log(err))
     }, []);
 
-     const enlistedBot = (bot) => {
-    if (!enlistedBots.includes(bot)) {
-      setEnlistedBots([...enlistedBots, bot]);
+    // The listedBot function takes a bot object as its argument and adds it to
+    //  the listedBots state if it is not already enlisted.
+     const listedBot = (bot) => {
+    if (!listedBots.includes(bot)) {
+      setlistedBots([...listedBots, bot]);
     }
   };
+
+
+
+   const releaseBot = (bot) => {
+    setlistedBots(listedBots.filter(b => b.id !== bot.id));
+  };
+//   The deleteBot function is used to delete a bot from the server
+//  and update the bots and listedBots state variables.
+//  It uses the fetch function to send a DELETE request to the server. 
+// After the bot is successfully deleted, it removes the bot from both bots and listedBots state.
+
+
 
    const deleteBot = (bot) => {
     fetch(`http://localhost:3000/bots/${bot.id}`, { method: 'DELETE' })
       .then(() => {
         setBots(bots.filter(b => b.id !== bot.id));
-        setEnlistedBots(enlistedBots.filter(b => b.id !== bot.id));
+        setlistedBots(listedBots.filter(b => b.id !== bot.id));
       })
       .catch(err => console.log(err));
   };
@@ -57,11 +71,16 @@ function BotCollection() {
               <td>{bot.created_at}</td>
               <td>{bot.updated_at}</td>
               <td>
-                {!enlistedBots.includes(bot) && (
-                  <button onClick={() => enlistedBot(bot)}>Enlist</button>
+{/* This code block is rendering two buttons for each bot in the bots array. The first button has the label "list" and
+                 it will be displayed only if the bot is not enlisted in the listedBots array.  */}
+                {!listedBots.includes(bot) && (
+                  <button onClick={() => listedBot(bot)}>list</button>
                 )}
-                {enlistedBots.includes(bot) && (
-                  <button onClick={() => enlistedBot(bot)}>Release</button>
+{/* This code block is rendering two buttons for each bot in the bots array. The first button has the label "list" and it will be displayed only if the bot is not enlisted in the listedBots array. The second button has the label "Release" and 
+it will be displayed only if the bot is enlisted in the listedBots array */}
+      
+                {listedBots.includes(bot) && (
+                  <button onClick={() => releaseBot(bot)}>Release</button>
                 )}
               </td>
                <td>
@@ -71,27 +90,42 @@ function BotCollection() {
           ))}
         </tbody>
       </table>
-        <YourBotArmy bots={enlistedBots} />
+       {/* This includes the YourBotArmy component with a bots prop set to the listedBots array. */}
+       <div style={{ float: 'right', marginTop: '20px' }}>
+        {/* passing down the releaseBot as aprop makes it able to function on click */}
+        <YourBotArmy bots={listedBots} releaseBot={releaseBot} />
+      </div>
     </div>
 
    
   );
 }
+
+// This declares the YourBotArmy component as a function that takes an
+//  object with bots and releaseBot properties as its argument.
+
  function YourBotArmy({ bots, releaseBot }) {
   return (
-    <div>
+    <div style={{ float: 'right' }}>
       <h2>Your Bot Army</h2>
       <ul>
         {bots.map(bot => (
           <li key={bot.id}>
+             <img src={bot.avatar_url} alt={bot.name} />
             {bot.name}
+              {bot.name}
+              {bot.health}
+              {bot.damage}
+              {bot.armor}
+              {bot.created_at}
+              {bot.updated_at}
              <button onClick={() => releaseBot(bot)}>Release</button>
           </li>
         ))}
       </ul>
     </div>
   );
-        }
+        };
 
 
 export default BotCollection;
