@@ -36,8 +36,19 @@
   margin: auto;
   padding: auto;
 }
+.TABLE1{
+  font-size: 30px;
+
+}
 h1{
   font-size: 100px;
+  border: 40px;
+  border-radius: 55px;
+  border-left: 100px;
+  padding: 0;
+  box-sizing: border-box;
+  color: #000;
+  background-color: #ccd5ae;
 }
 @keyframes App-logo-spin {
   from {

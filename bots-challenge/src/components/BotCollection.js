@@ -46,7 +46,7 @@ function BotCollection() {
 
      <div className='TABLE'>
       <h1>Bots</h1>
-      <table>
+      <table className='TABLE1'>
         <thead>
           <tr>
             <th>ID</th>
@@ -75,17 +75,17 @@ function BotCollection() {
 {/* This code block is rendering two buttons for each bot in the bots array. The first button has the label "list" and
                  it will be displayed only if the bot is not enlisted in the listedBots array.  */}
                 {!listedBots.includes(bot) && (
-                  <button onClick={() => listedBot(bot)}>list</button>
+                  <button onClick={() => listedBot(bot)} className='BTN1'>list</button>
                 )}
 {/* This code block is rendering two buttons for each bot in the bots array. The first button has the label "list" and it will be displayed only if the bot is not enlisted in the listedBots array. The second button has the label "Release" and 
 it will be displayed only if the bot is enlisted in the listedBots array */}
       
                 {listedBots.includes(bot) && (
-                  <button onClick={() => releaseBot(bot)}>Release</button>
+                  <button onClick={() => releaseBot(bot)} className='BTN2'>Release</button>
                 )}
               </td>
                <td>
-                <button onClick={() => deleteBot(bot)}>X</button>
+                <button onClick={() => deleteBot(bot)} className='BTN3'>X</button>
               </td>
             </tr>
           ))}
