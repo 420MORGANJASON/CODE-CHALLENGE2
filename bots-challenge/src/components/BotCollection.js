@@ -8,8 +8,8 @@ function BotCollection() {
      const [filter, setFilter] = useState('');
     
 
-    useEffect(()=>{
-        fetch('http://localhost:3000/bots')
+    useEffect(() => {
+        fetch ("https://new-repository.onrender.com/bots")
         .then(response => response.json())
         .then(data => setBots(data))
         .catch(err => console.log(err))
@@ -36,7 +36,7 @@ function BotCollection() {
 
 
    const deleteBot = (bot) => {
-    fetch(` http://localhost:3000/bots/${bot.id}`, { method: 'DELETE' })
+    fetch(`https://new-repository.onrender.com/bots/${bot.id}`, { method: 'DELETE' })
       .then(() => {
         setBots(bots.filter(b => b.id !== bot.id));
         setlistedBots(listedBots.filter(b => b.id !== bot.id));
